@@ -23,6 +23,7 @@ const TitleStyle = styled.h1`
     width: 12px;
     margin-left: 5px;
     animation: ${PulseIndicador} 1.4s infinite;
+    display: ${props => !props.indicator ? 'none' : 'block'};
   }
   span{
     font-size: 40px;
@@ -31,7 +32,7 @@ const TitleStyle = styled.h1`
 `;
 
 export function Title(props) {
-  return <TitleStyle><span>></span>{SeperateText(props.children)}<div /></TitleStyle>
+  return <TitleStyle indicator={props.activeIndicator}><span>></span>{SeperateText(props.children)}<div /></TitleStyle>
 }
 
 const SubTitleStyle = styled.h1`
@@ -55,5 +56,13 @@ const SubTitleStyle = styled.h1`
 `;
 
 export function SubTitle(props) {
-  return <SubTitleStyle><span>></span>{SeperateText(props.children)}<div /></SubTitleStyle>
+  return (
+    <>
+      {
+        props.active ?
+        <SubTitleStyle><span>></span>{SeperateText(props.children)}<div /></SubTitleStyle> :
+        ''
+      }
+    </>
+  )
 }
