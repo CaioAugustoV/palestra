@@ -1,4 +1,16 @@
+@font-face {
+  font-family: 'SF Mono Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SF Mono Regular'), url('../fonts/SFMonoRegular.woff') format('woff');
+}
+
 body {
   margin: 0;
   padding: 0;
+  font-family: 'SF Mono Regular';
+}
+
+h1, h2, h3, h4, h5, p, span, label{
+  font-family: 'SF Mono Regular';
 }
